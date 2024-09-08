@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments for User&#039;s blog	</title>
-	<atom:link href="//comments/feed/" rel="self" type="application/rss+xml" />
-	<link>//</link>
+	<atom:link href="https://bitsjourney.com/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>https://bitsjourney.com/</link>
 	<description></description>
 	<lastBuildDate>Sun, 08 Sep 2024 19:02:51 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -20,7 +20,7 @@
 	<item>
 		<title>
 		Comment on Hello world! by A WordPress Commenter		</title>
-		<link>//2024/09/08/hello-world/#comment-1</link>
+		<link>https://bitsjourney.com/2024/09/08/hello-world/#comment-1</link>
 
 		<dc:creator><![CDATA[A WordPress Commenter]]></dc:creator>
 		<pubDate>Sun, 08 Sep 2024 19:02:51 +0000</pubDate>

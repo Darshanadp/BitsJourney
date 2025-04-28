@@ -64,6 +64,17 @@ export const initialState = {
 			icon: 'ecommerce',
 		},
 		{
+			title: __( 'Website Emails & SMTP', 'astra-sites' ),
+			id: 'smtp',
+			description: __(
+				'Get emails from your website (forms, etc)',
+				'astra-sites'
+			),
+			enabled: true,
+			compulsory: false,
+			icon: 'envelope',
+		},
+		{
 			title: __( 'Donations', 'astra-sites' ),
 			id: 'donations',
 			description: __(
@@ -103,6 +114,17 @@ export const initialState = {
 			enabled: false,
 			compulsory: false,
 			icon: 'play-circle',
+		},
+		{
+			title: __( 'Appointment & Bookings', 'astra-sites' ),
+			id: 'appointment-bookings',
+			description: __(
+				'Easily manage bookings for your services',
+				'astra-sites'
+			),
+			enabled: false,
+			compulsory: false,
+			icon: 'calendar',
 		},
 		{
 			title: __( 'Free Live Chat', 'astra-sites' ),

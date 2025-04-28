@@ -256,6 +256,13 @@ function getFeaturePluginList( features, selectedEcommercePlugin ) {
 					init: 'suretriggers/suretriggers.php',
 				} );
 				break;
+			case 'smtp':
+				requiredPlugins.push( {
+					name: 'Suremail',
+					slug: 'suremails',
+					init: 'suremails/suremails.php',
+				} );
+				break;
 			case 'sales-funnels':
 				requiredPlugins.push( {
 					name: 'CartFlows',
@@ -273,6 +280,13 @@ function getFeaturePluginList( features, selectedEcommercePlugin ) {
 					name: 'Preso Player',
 					slug: 'presto-player',
 					init: 'presto-player/presto-player.php',
+				} );
+				break;
+			case 'appointment-bookings':
+				requiredPlugins.push( {
+					name: 'Latepoint',
+					slug: 'latepoint',
+					init: 'latepoint/latepoint.php',
 				} );
 				break;
 			case 'live-chat':

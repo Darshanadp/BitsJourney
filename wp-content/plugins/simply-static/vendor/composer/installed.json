@@ -102,7 +102,7 @@
                 }
             ],
             "description": "Converts CSS selectors to XPath expressions",
-            "homepage": "https://symfony.com",
+            "homepage": "https://symfony.com/",
             "support": {
                 "source": "https://github.com/symfony/css-selector/tree/v5.4.45"
             },
@@ -178,7 +178,7 @@
                 }
             ],
             "description": "Symfony polyfill for the Iconv extension",
-            "homepage": "https://symfony.com",
+            "homepage": "https://symfony.com/",
             "keywords": [
                 "compatibility",
                 "iconv",
@@ -258,7 +258,7 @@
                 }
             ],
             "description": "Symfony polyfill for intl's grapheme_* functions",
-            "homepage": "https://symfony.com",
+            "homepage": "https://symfony.com/",
             "keywords": [
                 "compatibility",
                 "grapheme",
@@ -342,7 +342,7 @@
                 }
             ],
             "description": "Symfony polyfill for intl's Normalizer class and related functions",
-            "homepage": "https://symfony.com",
+            "homepage": "https://symfony.com/",
             "keywords": [
                 "compatibility",
                 "intl",
@@ -426,7 +426,7 @@
                 }
             ],
             "description": "Symfony polyfill for the Mbstring extension",
-            "homepage": "https://symfony.com",
+            "homepage": "https://symfony.com/",
             "keywords": [
                 "compatibility",
                 "mbstring",
@@ -494,7 +494,7 @@
                 }
             ],
             "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
+            "homepage": "https://symfony.com/",
             "keywords": [
                 "compatibility",
                 "polyfill",
@@ -577,7 +577,7 @@
                 }
             ],
             "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
+            "homepage": "https://symfony.com/",
             "keywords": [
                 "compatibility",
                 "polyfill",

@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "icomoon";
-	src: url( "/wp-content/plugins/astra-sites/inc/assets/fonts/astra-sites.eot?9i8jex" );
-	src: url( "/wp-content/plugins/astra-sites/inc/assets/fonts/astra-sites.eot?9i8jex#iefix" ) format( "embedded-opentype" ), url( "/wp-content/plugins/astra-sites/inc/assets/fonts/astra-sites.ttf?9i8jex" ) format( "truetype" ), url( "/wp-content/plugins/astra-sites/inc/assets/fonts/astra-sites.woff?9i8jex" ) format( "woff" ), url( "/wp-content/plugins/astra-sites/inc/assets/fonts/astra-sites.svg?9i8jex#icomoon" ) format( "svg" );
+	src: url("/wp-content/plugins/astra-sites/inc/assets/fonts/astra-sites.eot?9i8jex");
+	src: url("/wp-content/plugins/astra-sites/inc/assets/fonts/astra-sites.eot?9i8jex#iefix") format( "embedded-opentype" ), url("/wp-content/plugins/astra-sites/inc/assets/fonts/astra-sites.ttf?9i8jex") format( "truetype" ), url("/wp-content/plugins/astra-sites/inc/assets/fonts/astra-sites.woff?9i8jex") format( "woff" ), url("/wp-content/plugins/astra-sites/inc/assets/fonts/astra-sites.svg?9i8jex#icomoon") format( "svg" );
 	font-weight: normal;
 	font-style: normal;
 }
@@ -1675,12 +1675,6 @@ body.loading-content .select-page-builder {
 
 .current-importing-status p {
 	margin: 0;
-}
-
-a.astra-sites-plugins-go-pro {
-	color: #dd4f93;
-	text-shadow: 1px 1px 1px #eee;
-	font-weight: bold;
 }
 
 @media ( min-width: 960px ) and ( max-width: 1020px ) {

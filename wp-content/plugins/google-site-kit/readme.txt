@@ -2,9 +2,9 @@
 
 Contributors:      google
 Requires at least: 5.2
-Tested up to:      6.8
+Tested up to:      6.9
 Requires PHP:      7.4
-Stable tag:        1.152.1
+Stable tag:        1.170.0
 License:           Apache License 2.0
 License URI:       https://www.apache.org/licenses/LICENSE-2.0
 Tags:              google, search-console, analytics, adsense, pagespeed-insights
@@ -109,35 +109,34 @@ Please create a new topic on our [WordPress.org support forum](https://wordpress
 
 == Changelog ==
 
-= 1.152.1 =
-
-**Fixed**
-
-* Published a new plugin version after issues with WordPress.org plugin updates not appearing for users.
-
-= 1.152.0 =
+= 1.170.0 =
 
 **Enhanced**
 
-* Update the setup success notification copy to consistently refer to "visitor groups" instead of "audiences" in Audience Segmentation settings. See [#10554](https://github.com/google/site-kit-wp/issues/10554).
-* Improve the naming of the available audience selectors. See [#10449](https://github.com/google/site-kit-wp/issues/10449).
-* Add new components for notices. See [#10429](https://github.com/google/site-kit-wp/issues/10429).
-* Refactor `DashboardPageSpeed` component to reduce cyclomatic complexity and remove the ESLint override. See [#10362](https://github.com/google/site-kit-wp/issues/10362).
-* Refactor the `Footer` component in `SettingsActiveModule` to reduce cyclomatic complexity and remove the ESLint override. See [#10353](https://github.com/google/site-kit-wp/issues/10353).
-* Remove the ESLint complexity override from the dashboard sharing settings' `Module` component. See [#10350](https://github.com/google/site-kit-wp/issues/10350).
-* Fix minor visual issues when the Dashbaord Sharing modal is being closed. See [#9138](https://github.com/google/site-kit-wp/issues/9138).
-* Fix bug that could cause an erroneous module link to appear when a module isn't connected. See [#7698](https://github.com/google/site-kit-wp/issues/7698).
-
-**Changed**
-
-* Remove GM3 assets from the codebase. See [#10604](https://github.com/google/site-kit-wp/issues/10604).
+* Show existing subscription status in email frequency selector. See [#11856](https://github.com/google/site-kit-wp/issues/11856).
+* Support sending plaintext emails. See [#11848](https://github.com/google/site-kit-wp/issues/11848).
+* Add support for plaintext email reports. See [#11847](https://github.com/google/site-kit-wp/issues/11847).
+* Batch Search Console requests when generating email reports. See [#11846](https://github.com/google/site-kit-wp/issues/11846).
+* Add eligible subscribers Email Reporting REST route for the email reporting feature. See [#11839](https://github.com/google/site-kit-wp/issues/11839).
+* Add the Analytics activation notification that prompts users to activate Analytics after completing Site Kit setup. See [#11817](https://github.com/google/site-kit-wp/issues/11817).
+* Update the help menu's list of items and add icons. See [#11815](https://github.com/google/site-kit-wp/issues/11815).
+* Add support for repeatable feature tours. See [#11811](https://github.com/google/site-kit-wp/issues/11811).
+* Add support for feature tour tooltips to point to a specific element. See [#11810](https://github.com/google/site-kit-wp/issues/11810).
+* Add API middleware to deduplicate requests. See [#11769](https://github.com/google/site-kit-wp/issues/11769).
+* Add `NoticeArea` component to the user engagement selection panel. See [#11459](https://github.com/google/site-kit-wp/issues/11459).
+* Add/enable email generation/sending to Email Reporting. See [#11278](https://github.com/google/site-kit-wp/issues/11278).
+* Add Analytics events to Email Reporting. Props 10upsimon. See [#11168](https://github.com/google/site-kit-wp/issues/11168).
+* Add GA tracking for source links underneath each widget area in the Site Kit dashboard. See [#11128](https://github.com/google/site-kit-wp/issues/11128).
+* Update reports to include data for the current day. See [#10664](https://github.com/google/site-kit-wp/issues/10664).
 
 **Fixed**
 
-* Fix the `&amp;` occurrences issue in KMW widgets. See [#10622](https://github.com/google/site-kit-wp/issues/10622).
-* Fix bug that can occur when AAA Option Optimizer plugin is installed. Props tacoverdo. See [#10573](https://github.com/google/site-kit-wp/issues/10573).
-* Restore loading state for Google tag mismatch notification when actioning. See [#10489](https://github.com/google/site-kit-wp/issues/10489).
-* Fix glitches when closing various modal dialogs. See [#9137](https://github.com/google/site-kit-wp/issues/9137).
-* Update the Ad Blocking Recovery notification to remain visible after clicking on the CTA button. See [#7908](https://github.com/google/site-kit-wp/issues/7908).
+* Fix email reporting overlay CTA issues. See [#11962](https://github.com/google/site-kit-wp/issues/11962).
+* Return to the plugins page when clicking the "Exit setup" button on the Site Kit Service screens in the new setup flow. See [#11939](https://github.com/google/site-kit-wp/issues/11939).
+* Show the help menu on the Analytics and Key Metrics screens in the new setup flow. See [#11901](https://github.com/google/site-kit-wp/issues/11901).
+* Fix Google Privacy Policy link copy & icon alignment on the new splash page. See [#11900](https://github.com/google/site-kit-wp/issues/11900).
+* Ensure the "Search Console was successfully set up" toast notification is shown on the Analytics setup screen in the new setup flow. See [#11868](https://github.com/google/site-kit-wp/issues/11868).
+* Fix handling of `add_to_cart` and other WooCommerce events. See [#11401](https://github.com/google/site-kit-wp/issues/11401).
+* Fix the Key Metrics banner issue that caused it to re-appear even after canceling it. See [#11171](https://github.com/google/site-kit-wp/issues/11171).
 
 [See changelog for all versions](https://raw.githubusercontent.com/google/site-kit-wp/main/changelog.txt).

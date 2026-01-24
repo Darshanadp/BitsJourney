@@ -19,6 +19,8 @@ const Survey = () => {
 			currentIndex,
 			builder,
 			requiredPlugins,
+			notInstalledList,
+			notActivatedList,
 			analyticsFlag,
 			shownRequirementOnce,
 			pluginInstallationAttempts,
@@ -164,6 +166,20 @@ const Survey = () => {
 			Object.keys( requirementWarning ).length > 0;
 	}
 
+	// Apply multisite-specific requirement flag logic
+	if ( starterTemplates?.isMultisite ) {
+		// For multisite: use the multisite-aware checking
+		const shouldSkipRequirements = starterTemplates?.canActivatePlugins
+			? notInstalled?.length <= 0 &&
+			  starterTemplates?.themeStatus !== 'not-installed' // No Plugins/Themes are available to install
+			: allPuginList?.length <= 0 &&
+			  starterTemplates?.themeStatus === 'installed-and-active'; // No Plugins/Themes are available to install or activate
+
+		if ( shouldSkipRequirements ) {
+			requirementsFlag = false;
+		}
+	}
+
 	const [ showRequirementCheck, setShowRequirementCheck ] =
 		useState( requirementsFlag );
 
@@ -191,7 +207,7 @@ const Survey = () => {
 
 	const hasAgreedFirstTime = allowResetSite || firstImportStatus;
 
-	const handleSurveyFormSubmit = ( e ) => {
+	const handleSurveyFormSubmit = ( e, skipSubscription = false ) => {
 		e.preventDefault();
 
 		if ( hasAgreedFirstTime ) {
@@ -227,6 +243,11 @@ const Survey = () => {
 					} );
 			}
 
+			// Skip subscription if chose to skip and start building.
+			if ( skipSubscription ) {
+				return;
+			}
+
 			if ( astraSitesVars?.subscribed === 'yes' ) {
 				dispatch( {
 					type: 'set',
@@ -239,13 +260,33 @@ const Survey = () => {
 				return;
 			}
 
+			const templatePlugins = requiredPlugins.required_plugins;
+
+			const pluginLists = [
+				templatePlugins?.active,
+				templatePlugins?.inactive,
+				templatePlugins?.notinstalled,
+				notInstalledList,
+				notActivatedList,
+			];
+
+			const uniqueFeatures = Array.from(
+				new Set(
+					pluginLists
+						.flatMap( ( list ) =>
+							Array.isArray( list ) ? list : []
+						)
+						.map( ( plugin ) => plugin?.slug )
+						.filter( Boolean )
+				)
+			);
+
 			const subscriptionFields = {
 				EMAIL: formDetails.email,
 				FIRSTNAME: formDetails.first_name,
 				PAGE_BUILDER: builder,
-				WP_USER_TYPE: formDetails.wp_user_type,
-				BUILD_WEBSITE_FOR: formDetails.build_website_for,
 				OPT_IN: formDetails.opt_in,
+				FEATURES: uniqueFeatures,
 			};
 
 			const content = new FormData();
@@ -314,6 +355,14 @@ const Survey = () => {
 						? ICONS.arrowRightDisabled
 						: ICONS.arrowRight }
 				</button>
+
+				<button
+					className="p-2 bg-transparent border-none text-classic-button flex justify-self-center text-sm cursor-pointer"
+					onClick={ ( e ) => handleSurveyFormSubmit( e, true ) }
+				>
+					{ __( 'Skip & Start Building', 'astra-sites' ) }
+				</button>
+
 				<p className="!text-zip-app-inactive-icon subscription-agreement-text text-center mt-4">
 					{ beforeTerms }
 					{ terms }
@@ -414,6 +463,105 @@ const Survey = () => {
 	};
 
 	const optionalRequirement = () => {
+		// Cache frequently accessed properties for better performance
+		const isMultisite = starterTemplates?.isMultisite;
+		const canActivatePlugins = starterTemplates?.canActivatePlugins;
+		const canInstallPlugins = starterTemplates?.canInstallPlugins;
+		const themeStatus = starterTemplates?.themeStatus;
+
+		// Helper function to determine if theme is missing based on user permissions
+		const checkThemeMissing = () => {
+			return canActivatePlugins
+				? themeStatus === 'not-installed'
+				: themeStatus !== 'installed-and-active';
+		};
+
+		// Helper function to check if plugins are missing
+		const checkPluginsMissing = () => {
+			if ( canInstallPlugins ) {
+				return false;
+			}
+			return canActivatePlugins
+				? ( notInstalled?.length || 0 ) > 0
+				: ( allPuginList?.length || 0 ) > 0;
+		};
+
+		// Determine multisite scenario with missing components
+		let isMultisiteWithMissingPluginOrTheme = false;
+		let isThemeMissing = false;
+
+		if ( isMultisite ) {
+			isThemeMissing = checkThemeMissing();
+			const hasPluginsMissing = checkPluginsMissing();
+			isMultisiteWithMissingPluginOrTheme =
+				isThemeMissing || hasPluginsMissing;
+		}
+
+		// Determine the appropriate requirement list based on user permissions
+		const requireList = canActivatePlugins ? notInstalled : allPuginList;
+
+		// Render multisite-specific requirement screen
+		if ( isMultisiteWithMissingPluginOrTheme ) {
+			return (
+				<div className="requirement-check-wrap">
+					<h2 className="text-3xl font-bold text-zip-app-heading max-md:!text-3xl max-sm:!text-2xl pb-4">
+						{ __(
+							'Missing Required Plugins or Theme',
+							'astra-sites'
+						) }
+					</h2>
+					<p className="!mb-4">
+						{ __(
+							'In a multisite environment, you need to have all required plugins and themes already installed and activated by your network administrator to import this template.',
+							'astra-sites'
+						) }
+					</p>
+					{ isThemeMissing && (
+						<>
+							<h5>{ __( 'Missing Theme:', 'astra-sites' ) }</h5>
+							<ul className="requirement-check-list !list-disc">
+								<li>{ 'Astra' }</li>
+							</ul>
+						</>
+					) }
+					{ requireList?.length > 0 && (
+						<>
+							<h5>{ __( 'Missing Plugins:', 'astra-sites' ) }</h5>
+							<ul className="requirement-check-list">
+								{ requireList.map( ( value, index ) => (
+									<li key={ index }>
+										<div className="requirement-list-item">
+											{ canActivatePlugins
+												? value.name
+												: value.plugin.name }
+										</div>
+									</li>
+								) ) }
+							</ul>
+						</>
+					) }
+					<p>
+						{ __(
+							'Please contact your network administrator to install and activate these plugins.',
+							'astra-sites'
+						) }
+					</p>
+					{ starterTemplates?.canInstallPlugins && (
+						<button
+							className="submit-survey-btn button-text d-flex-center-align"
+							onClick={ handleRequirementCheck }
+						>
+							<span className="leading-[15px]">
+								{ __( 'Continue Anyway', 'astra-sites' ) }
+							</span>
+							{ ICONS.arrowRight }
+						</button>
+					) }
+				</div>
+			);
+		}
+
+		// Original requirement screen for non-multisite scenarios
 		return (
 			<div className="requirement-check-wrap">
 				<h1 className="text-3xl font-bold text-zip-app-heading max-md:!text-3xl max-sm:!text-2xl !text-center">

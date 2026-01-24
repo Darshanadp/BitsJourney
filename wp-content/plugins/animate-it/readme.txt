@@ -1,9 +1,10 @@
-=== Animate It! ===
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head><meta charset="UTF-8"></head><body><p>=== Animate It! ===
 Contributors: eleopard
-Tags: css3 animation, animate.css, jquery, on scroll animation, delay, infinite, entry exit, iteration
+Tags: css3 animation, animate.css, jquery, on scroll, infinite
 Requires at least: 4.7.0
-Tested up to: 6.5.2
-Stable tag: 3.0.3
+Tested up to: 6.8.3
+Stable tag: 3.0.4
 License: GNU General Public License version 2 or later
 License URI: http://www.gnu.org/copyleft/gpl.html
 
@@ -12,7 +13,7 @@ Add cool CSS3 animations to your content.
 == Description ==
 Add cool CSS3 animations to your content.
 
-[Demo](http://downloads.eleopard.in/animate-it-demo-wordpress/ "Demo") | [Documentation](http://downloads.eleopard.in/animate-it-documentation-wordpress/ "Documentation") | [Class Generator](http://downloads.eleopard.in/class-generator-wordpress/ "Class Generator")
+[Demo](https://eleopardsolutions.com/animate-it-documentation-wordpress/ "Demo") | [Documentation](https://eleopardsolutions.com/animate-it-documentation-wordpress/ "Documentation") | [Class Generator](https://eleopardsolutions.com/animate-it-class-generator/ "Class Generator")
 
 [youtube https://youtu.be/JKRn6NUM-i4]
 
@@ -27,7 +28,7 @@ Some of the Key features Include:
 * Providing delay feature in animation to create a nice animation sequence.
 * Providing feature to control the duration for a more precise animation.
 * Providing a button in the editor to easily add an animation block in the article or post.
-* Allow user to add animation on WordPress widgets. Use <a href="http://downloads.eleopard.in/class-generator-wordpress/" target="_blank">Class Generator</a> to generate the required animation classes. 
+* Allow user to add animation on WordPress widgets. Use <a href="https://eleopardsolutions.com/animate-it-class-generator/" target="_blank">Class Generator</a> to generate the required animation classes. 
 * Allow user to apply animation infinitely or any fixed number of times.
 * Option to add custom CSS classes to individual animation block.
 * Options to enable or disable animations on Smartphones and Tablets.
@@ -39,7 +40,7 @@ All the CSS3 animations are from [Animate.css](http://daneden.github.io/animate.
 == Installation ==
 1. Upload edsanimate to the /wp-content/plugins/ directory.
 2. Activate the plugin through the Plugins menu in WordPress.
-3. Set your options from the Settings -> Animate It! admin area.
+3. Set your options from the Settings -&gt; Animate It! admin area.
 
 Alternatively:
 
@@ -47,7 +48,7 @@ Alternatively:
 2. Search for Animate It!
 3. Click install Animate It!
 4. Activate through the Plugins menu in WordPress or when asked during installation
-5. Set your options from the Settings -> Animate It! admin area
+5. Set your options from the Settings -&gt; Animate It! admin area
 
 == Frequently Asked Questions ==
 
@@ -55,10 +56,10 @@ Alternatively:
 Please add CSS class "eds-animation-paused" along with the other animation classes generated using class generator 
 
 = Setting the scroll offset for on scroll functionality? =
-Percentage scroll offset can be set from Settings-> Animate It! menu in the admin area.
+Percentage scroll offset can be set from Settings-&gt; Animate It! menu in the admin area.
 
 = Hiding horizontal and vertical scroll bar? =
-Settings to show or hide vertical or horizontal scroll bar are available at  Settings-> Animate It! menu in the admin area.
+Settings to show or hide vertical or horizontal scroll bar are available at  Settings-&gt; Animate It! menu in the admin area.
 
 = Animation applied using older plugin and class generator won't work?  =
 If animation applied using class generator or older plugin wont work, Please do the following:
@@ -78,13 +79,16 @@ Add duration class ( duration1 to duration20 ) along with the other classes. or 
 3. **Entry Exit Animation** - Select and configure the entry and exit animations.
 4. **Other Options** - Select other options like iteration count etc.  
 5. **Update Dummy Content** - Update the content of the block as per your requirement. You can copy and paste the same in Text Widget also.
-6. **Settings** - Options for Animate It! under Settings-> Animate It! menu in the admin area.
+6. **Settings** - Options for Animate It! under Settings-&gt; Animate It! menu in the admin area.
 7. **Class Generator** - Class Generator to generate required Animation Classes for Widgets.
 8. **Copy Generated Classes** - Copy the generated classes.
 9. **Apply on Widgets** - Apply the copied classes by pasting it in the 'Animate It! Classes' text box under the widget settings.
 
 
 == Changelog ==
+
+= Version 3.0.4 =
+* Tested up to version 6.8.3
 
 = Version 3.0.3 =
 * Tested up to version 6.5.2
@@ -230,7 +234,7 @@ Add duration class ( duration1 to duration20 ) along with the other classes. or 
 * New options to add animation duration and infinite animation while applying an animation on WordPress Post, Page or widget.
 
 = Version 1.1 =
-* New options added under Settings-> Animate It! to enable or disable animations on Smartphones and Tablets.
+* New options added under Settings-&gt; Animate It! to enable or disable animations on Smartphones and Tablets.
 
 = Version 1.0 =
 * Initial public release.
@@ -239,3 +243,4 @@ Add duration class ( duration1 to duration20 ) along with the other classes. or 
 
 = Version 1.0 =
 * Initial public release.
+</p></body></html>

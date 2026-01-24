@@ -50,6 +50,21 @@
 			api.state('astra-style-guide-status').set('loaded');
 		});
 
+		// Bind the click event to the button to focus on the style guide section.
+		const urlParams = new URLSearchParams( window.location.search );
+		const autofocus = urlParams.get( 'autofocus' );
+
+		if ( autofocus === 'astra-tour' ) {
+			let hasTriggered = false; // flag to ensure it only fires once
+			wp.customize.previewer.bind( 'ready', () => {
+				if ( hasTriggered ) {
+					return; // if already triggered, do nothing
+				}
+
+				button.trigger( 'click' );
+				hasTriggered = true; // set the flag to true after triggering
+			} );
+		}
 	});
 
 	// development code.
@@ -60,5 +75,46 @@
 		// Apply the custom class to the iframe's body
 		iframeBody.addClass('ast-sg-loaded');
 	});
-	
+
+	// Runs after the Customizer controls are ready.
+	wp.customize.bind('ready', () => {
+
+		// Read ?preview-device from URL (desktop|tablet|mobile)
+		const url = new URL(window.location.href);
+		const device = url.searchParams.get('preview-device');
+
+		// Stop if nothing to do
+		if (!device || !['desktop', 'tablet', 'mobile'].includes(device)) return;
+
+		let attempt = 0;
+		const maxAttempts = 10;
+
+		// Try switching device with progressive delay
+		const trySwitch = () => {
+			attempt++;
+
+			// Stop if exceeded attempts
+			if (attempt > maxAttempts) return;
+
+			// If API is ready, apply device mode
+			if (wp.customize.previewedDevice) {
+				try {
+					wp.customize.previewedDevice.set(device);
+
+					// Remove param so it only runs once
+					url.searchParams.delete('preview-device');
+					window.history.replaceState({}, '', url.toString());
+					return; // Success — stop
+				} catch (e) {
+					// Continue to next retry
+				}
+			}
+
+			// Progressive delay: 50ms, 100ms, 150ms...
+			setTimeout(trySwitch, attempt * 50);
+		};
+
+		// Start first attempt
+		setTimeout(trySwitch, 50);
+	});
 })(jQuery, wp.customize);

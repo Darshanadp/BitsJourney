@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Blogs Archives - Bits Journey</title>
+	<atom:link href="/category/blogs/feed/" rel="self" type="application/rss+xml" />
+	<link>/category/blogs/</link>
+	<description>&#34;Bits Journey&#34; is a technology blog dedicated to providing practical insights into cybersecurity and networking. Our mission is to demystify complex security concepts and deliver out-of-the-box solutions that professionals and enthusiasts can apply in real-world scenarios.</description>
+	<lastBuildDate>Sun, 04 May 2025 06:35:30 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.9</generator>
+
+<image>
+	<url>/wp-content/uploads/2025/04/cropped-Bits-Journey-Site-Icon-32x32.png</url>
+	<title>Blogs Archives - Bits Journey</title>
+	<link>/category/blogs/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Installing Software on Linux</title>
+		<link>/blogs/linux/package-manager/</link>
+					<comments>/blogs/linux/package-manager/#respond</comments>
+		
+		<dc:creator><![CDATA[user]]></dc:creator>
+		<pubDate>Fri, 07 Mar 2025 06:16:50 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Installing Software on Linux]]></category>
+		<category><![CDATA[Linux Application Installation]]></category>
+		<category><![CDATA[Package Manager]]></category>
+		<guid isPermaLink="false">http://192.168.16.225/?p=2031</guid>
+
+					<description><![CDATA[<p>Introduction to Linux Package Management Linux offers an efficient, flexible way to manage software through package management systems. Understanding how these systems work not only makes it easier to install software but also helps you troubleshoot and maintain a healthy Linux system. Whether you&#8217;re using Ubuntu, Debian, Fedora, or another distribution, mastering package management is [&#8230;]</p>
+<p>The post <a href="/blogs/linux/package-manager/">Installing Software on Linux</a> appeared first on <a href="/">Bits Journey</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h2 class="wp-block-heading">Introduction to Linux Package Management</h2>
+
+
+
+<p style="font-size:16px">Linux offers an efficient, flexible way to manage software through package management systems. Understanding how these systems work not only makes it easier to install software but also helps you troubleshoot and maintain a healthy Linux system. Whether you&#8217;re using Ubuntu, Debian, Fedora, or another distribution, mastering package management is a crucial step in your Linux journey.</p>
+
+
+
+<h2 class="wp-block-heading has-medium-font-size">Package Managers: The Basics</h2>
+
+
+
+<p style="font-size:16px">There are two main types of package managers you’ll encounter:</p>
+
+
+
+<ul class="wp-block-list">
+<li style="font-size:16px">dpkg (Debian Package Manager):
+<ul class="wp-block-list">
+<li>A low-level package manager for &#8216;<code>.deb'</code> files.</li>
+
+
+
+<li>Requires manual downloading of packages.</li>
+
+
+
+<li>Does not automatically manage dependencies, often causing installation issues if dependencies are missing.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">apt (Advanced Package Tool):
+<ul class="wp-block-list">
+<li>A higher-level package manager built on top of <code>dpkg</code>.</li>
+
+
+
+<li>Automatically downloads and installs dependencies.</li>
+
+
+
+<li>Far easier and more efficient for everyday software management.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading has-medium-font-size">Installing Software with dpkg</h3>
+
+
+
+<p style="font-size:16px">Sometimes you might need to manually download and install a &#8216;<code>.deb</code>&#8216; file, especially when the software isn&#8217;t available in your repositories. Here’s a quick example using Discord:</p>
+
+
+
+<ol class="wp-block-list">
+<li style="font-size:16px">Download the <code>.deb</code> file from the official Discord website.</li>
+
+
+
+<li style="font-size:16px">Install it using the command:
+<ul class="wp-block-list">
+<li><strong>sudo dpkg -i discord.deb</strong></li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">If you encounter dependency errors, you can fix them with:
+<ul class="wp-block-list">
+<li><strong>sudo apt &#8211;fix-broken install</strong></li>
+</ul>
+</li>
+</ol>
+
+
+
+<p style="font-size:16px">Using <code>dpkg</code> is powerful but requires manual handling of any missing dependencies.</p>
+
+
+
+<h3 class="wp-block-heading has-medium-font-size">Installing Software with apt</h3>
+
+
+
+<p style="font-size:16px">For most cases, <code>apt</code> is the go-to method for installing software:</p>
+
+
+
+<ol class="wp-block-list">
+<li style="font-size:16px">First, update your package lists:
+<ul class="wp-block-list">
+<li style="font-size:16px"><strong>sudo apt update</strong></li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Then, install the desired package:
+<ul class="wp-block-list">
+<li><strong>sudo apt install <em>&lt;package name&gt;</em></strong></li>
+</ul>
+</li>
+</ol>
+
+
+
+<p style="font-size:16px"><code>apt</code> automatically resolves dependencies, making software installation much smoother. If issues occur, running:</p>
+
+
+
+<ul class="wp-block-list">
+<li style="font-size:16px"><strong>sudo apt &#8211;fix-broken install</strong></li>
+</ul>
+
+
+
+<p style="font-size:16px">can quickly repair them.</p>
+
+
+
+<h3 class="wp-block-heading has-medium-font-size">Managing Repositories</h3>
+
+
+
+<p style="font-size:16px">Linux distributions use repositories — servers that store software packages. To manage them:</p>
+
+
+
+<ul class="wp-block-list">
+<li style="font-size:16px">View or edit repository sources:
+<ul class="wp-block-list">
+<li style="font-size:16px"><strong>sudo apt edit-sources</strong></li>
+</ul>
+</li>
+</ul>
+
+
+
+<p style="font-size:16px">Sometimes, software isn&#8217;t available in the default repositories, in which case you may need to add a custom repository (PPA) or download a <code>.deb</code> file manually.</p>
+
+
+
+<h3 class="wp-block-heading has-medium-font-size">Handy apt Commands</h3>
+
+
+
+<ul class="wp-block-list">
+<li style="font-size:16px">List available packages:
+<ul class="wp-block-list">
+<li><strong>sudo apt list</strong></li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">View package details:
+<ul class="wp-block-list">
+<li><strong>sudo apt show <em>&lt;package name&gt;</em></strong></li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Remove a package:
+<ul class="wp-block-list">
+<li><strong>sudo apt remove <em>&lt;package name&gt;</em></strong></li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Purge a package (remove it completely):
+<ul class="wp-block-list">
+<li><strong>sudo apt purge <em>&lt;package name&gt;</em></strong></li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Upgrade installed packages:
+<ul class="wp-block-list">
+<li><strong>sudo apt upgrade</strong></li>
+</ul>
+</li>
+</ul>
+
+
+
+<p style="font-size:16px">These commands help you maintain your system and keep it updated with the latest software versions.</p>
+
+
+
+<h2 class="wp-block-heading has-medium-font-size">Other Package Managers: Snap and Flatpak</h2>
+
+
+
+<p style="font-size:16px">In addition to traditional package managers, Linux also supports newer, more universal systems like Snap and Flatpak.</p>
+
+
+
+<ul class="wp-block-list">
+<li style="font-size:16px">Snap:
+<ul class="wp-block-list">
+<li>Developed by Canonical (Ubuntu’s parent company).</li>
+
+
+
+<li>Provides containerized software packages from the Snap Store.</li>
+
+
+
+<li>Install Snap:
+<ul class="wp-block-list">
+<li><strong>sudo apt install snapd</strong></li>
+</ul>
+</li>
+
+
+
+<li>Install software using Snap:
+<ul class="wp-block-list">
+<li><strong>sudo snap install <em>&lt;package name&gt;</em></strong></li>
+</ul>
+</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Flatpak:
+<ul class="wp-block-list">
+<li>An alternative to Snap, designed to work across multiple distributions.</li>
+
+
+
+<li>Software runs in a sandboxed environment for better security.</li>
+
+
+
+<li>Install Flatpak:
+<ul class="wp-block-list">
+<li><strong>sudo apt install flatpak</strong></li>
+</ul>
+</li>
+
+
+
+<li>Add the Flathub repository (the main Flatpak app store):
+<ul class="wp-block-list">
+<li><strong>flatpak remote-add &#8211;if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</strong></li>
+</ul>
+</li>
+
+
+
+<li>Install an app:
+<ul class="wp-block-list">
+<li><strong>flatpak install flathub <em>&lt;app name&gt;</em></strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+<p style="font-size:16px">Both Snap and Flatpak are great options when a program isn&#8217;t available in your distro’s native repositories.</p>
+
+
+
+<h2 class="wp-block-heading has-medium-font-size">Language-Specific Package Managers</h2>
+
+
+
+<p style="font-size:16px">Certain programming languages come with their own package managers:</p>
+
+
+
+<ul class="wp-block-list">
+<li style="font-size:16px">Python:
+<ul class="wp-block-list">
+<li>Use <code>pip</code> to install Python libraries:
+<ul class="wp-block-list">
+<li><strong>pip install <em>&lt;package name&gt;</em></strong></li>
+</ul>
+</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Ruby:
+<ul class="wp-block-list">
+<li>Use <code>gem</code> to install Ruby libraries:
+<ul class="wp-block-list">
+<li><strong>gem install <em>&lt;package name&gt;</em></strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+<p style="font-size:16px">These are particularly useful when you&#8217;re working on development projects.</p>
+
+
+
+<h2 class="wp-block-heading has-medium-font-size">Using Git to Install Software</h2>
+
+
+
+<p style="font-size:16px">Sometimes software isn&#8217;t distributed through package managers but rather through Git repositories:</p>
+
+
+
+<ol class="wp-block-list">
+<li style="font-size:16px">Install Git:
+<ul class="wp-block-list">
+<li><strong>sudo apt install git</strong></li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Clone a repository:
+<ul class="wp-block-list">
+<li><strong>git clone <em>&lt;repository url&gt;</em></strong></li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">For Python projects, install required dependencies:
+<ul class="wp-block-list">
+<li><strong>pip3 install -r requirements.txt</strong></li>
+</ul>
+</li>
+</ol>
+
+
+
+<p style="font-size:16px">Git gives you access to the latest code directly from developers — perfect for cutting-edge tools and open-source projects.</p>
+
+
+
+<h2 class="wp-block-heading has-medium-font-size">Conclusion</h2>
+
+
+
+<p style="font-size:16px">Installing software on Linux may seem complex at first, but with a bit of practice, it becomes second nature. Between traditional tools like <code>apt</code>, modern solutions like Snap and Flatpak, and even languagespecific managers like <code>pip</code>, Linux gives you multiple ways to get the software you need.<br>The best way to truly master these skills is by hands-on practice. Platforms like Hack The Box Academy offer excellent interactive labs where you can sharpen your Linux skills further. So, don’t hesitate — start exploring, installing, and learning today!</p>
+
+
+
+<p></p>
+<p>The post <a href="/blogs/linux/package-manager/">Installing Software on Linux</a> appeared first on <a href="/">Bits Journey</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blogs/linux/package-manager/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Windows OS Hardening</title>
+		<link>/blogs/win/windows-hardening/</link>
+					<comments>/blogs/win/windows-hardening/#respond</comments>
+		
+		<dc:creator><![CDATA[user]]></dc:creator>
+		<pubDate>Sat, 01 Mar 2025 06:14:36 +0000</pubDate>
+				<category><![CDATA[Windows]]></category>
+		<category><![CDATA[prevent getting hacked]]></category>
+		<category><![CDATA[secure windows]]></category>
+		<category><![CDATA[windows hardening]]></category>
+		<guid isPermaLink="false">http://192.168.16.225/?p=2027</guid>
+
+					<description><![CDATA[<p>How to Secure Your Windows PC Like a Pro In today’s digital world, securing your Windows operating system isn&#8217;t optional — it’s absolutely essential. With cyber threats constantly evolving, Windows OS hardening helps reduce vulnerabilities, protect sensitive data, and make your PC a lot tougher to attack.In this post, we’ll walk you through practical steps [&#8230;]</p>
+<p>The post <a href="/blogs/win/windows-hardening/">Windows OS Hardening</a> appeared first on <a href="/">Bits Journey</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h2 class="wp-block-heading has-large-font-size">How to Secure Your Windows PC Like a Pro</h2>
+
+
+
+<p style="font-size:16px">In today’s digital world, securing your Windows operating system isn&#8217;t optional — it’s absolutely essential. With cyber threats constantly evolving, Windows OS hardening helps reduce vulnerabilities, protect sensitive data, and make your PC a lot tougher to attack.<br>In this post, we’ll walk you through practical steps to harden your Windows PC — whether you&#8217;re a beginner or a tech enthusiast.</p>
+
+
+
+<h2 class="wp-block-heading has-medium-font-size">What is Windows Hardening?</h2>
+
+
+
+<p style="font-size:16px">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#8216;Content here, content here&#8217;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#8216;lorem ipsum&#8217; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+
+
+<h3 class="wp-block-heading has-medium-font-size">Basic Windows Hardening Steps</h3>
+
+
+
+<p style="font-size:16px">Let&#8217;s start with the essentials:</p>
+
+
+
+<ol class="wp-block-list">
+<li style="font-size:16px">Keep Windows Updated
+<ul class="wp-block-list">
+<li>Always enable automatic updates. Microsoft regularly patches critical security vulnerabilities.</li>
+
+
+
+<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f4e2.png" alt="📢" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Tip: Go to Settings &gt; Windows Update &gt; Enable Automatic Updates.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Use Strong Passwords and Windows Hello
+<ul class="wp-block-list">
+<li>Use strong, complex passwords and enable Windows Hello (PIN, fingerprint, or face recognition) for quicker and safer login.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Enable the Windows Firewall
+<ul class="wp-block-list">
+<li>The built-in Windows Defender Firewall blocks unauthorized access to your computer.</li>
+
+
+
+<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f4e2.png" alt="📢" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Tip: Check it&#8217;s enabled under Control Panel &gt; System and Security &gt; Windows Defender Firewall.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Use Antivirus Protection
+<ul class="wp-block-list">
+<li>Stick with Microsoft Defender Antivirus (it’s excellent) or a reputable third-party antivirus for an extra layer of protection.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Set User Account Control (UAC) to Maximum
+<ul class="wp-block-list">
+<li>UAC prompts alert you before changes are made to your system.</li>
+
+
+
+<li style="font-size:16px"><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f4e2.png" alt="📢" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Tip: In Settings &gt; Search UAC, move the slider to Always Notify.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="770" height="581" src="/wp-content/uploads/2025/03/Screenshot-2025-04-27-180332-1.png" alt="" class="wp-image-2695" srcset="/wp-content/uploads/2025/03/Screenshot-2025-04-27-180332-1.png 770w, /wp-content/uploads/2025/03/Screenshot-2025-04-27-180332-1-300x226.png 300w, /wp-content/uploads/2025/03/Screenshot-2025-04-27-180332-1-768x579.png 768w" sizes="(max-width: 770px) 100vw, 770px" /></figure>
+
+
+
+<p></p>
+
+
+
+<h3 class="wp-block-heading has-medium-font-size"><strong>Intermediate Windows Hardening Techniques</strong></h3>
+
+
+
+<p style="font-size:16px">Ready to take it up a notch? Here are intermediate steps</p>
+
+
+
+<ol class="wp-block-list">
+<li style="font-size:16px">Remove Bloatware
+<ul class="wp-block-list">
+<li>Uninstall unnecessary apps to reduce attack surfaces.</li>
+
+
+
+<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f4e2.png" alt="📢" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Tip: Settings &gt; Apps &gt; Apps &amp; Features.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Use a Standard User Account
+<ul class="wp-block-list">
+<li>Avoid using your Admin account daily.</li>
+
+
+
+<li>Create a Standard User account for everyday tasks to reduce the risk of malware installing itself.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Enable BitLocker Encryption
+<ul class="wp-block-list">
+<li>Encrypt your drives with BitLocker to protect your data even if your device is stolen.</li>
+
+
+
+<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f4e2.png" alt="📢" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Tip: Control Panel &gt; BitLocker Drive Encryption.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Disable SMBv1 Protocol
+<ul class="wp-block-list">
+<li>SMBv1 is an outdated and vulnerable protocol.</li>
+
+
+
+<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f4e2.png" alt="📢" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Tip: Control Panel &gt; Programs &gt; Turn Windows Features On or Off &gt; Uncheck SMB 1.0/CIFS.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Enable Secure Boot
+<ul class="wp-block-list">
+<li style="font-size:16px">Secure Boot ensures only trusted software loads during startup.</li>
+
+
+
+<li style="font-size:16px"><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f4e2.png" alt="📢" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Tip: Configure from BIOS/UEFI settings.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Enable Controlled Folder Access
+<ul class="wp-block-list">
+<li>Protect key folders from ransomware attacks.</li>
+
+
+
+<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f4e2.png" alt="📢" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Tip: Windows Security &gt; Virus &amp; Threat Protection &gt; Manage Ransomware Protection.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="838" height="671" src="/wp-content/uploads/2025/03/Screenshot-2025-04-27-180530.png" alt="" class="wp-image-2696" srcset="/wp-content/uploads/2025/03/Screenshot-2025-04-27-180530.png 838w, /wp-content/uploads/2025/03/Screenshot-2025-04-27-180530-300x240.png 300w, /wp-content/uploads/2025/03/Screenshot-2025-04-27-180530-768x615.png 768w" sizes="(max-width: 838px) 100vw, 838px" /></figure>
+
+
+
+<p></p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="495" height="434" src="/wp-content/uploads/2025/03/Screenshot-2025-04-27-180632.png" alt="" class="wp-image-2697" srcset="/wp-content/uploads/2025/03/Screenshot-2025-04-27-180632.png 495w, /wp-content/uploads/2025/03/Screenshot-2025-04-27-180632-300x263.png 300w" sizes="(max-width: 495px) 100vw, 495px" /></figure>
+
+
+
+<p></p>
+
+
+
+<h3 class="wp-block-heading has-medium-font-size"><strong>Advanced Windows Hardening (For Power Users)</strong></h3>
+
+
+
+<p style="font-size:16px">For tech-savvy users or system admins:</p>
+
+
+
+<ol class="wp-block-list">
+<li style="font-size:16px">Disable Unnecessary Windows Services
+<ul class="wp-block-list">
+<li>Services like Remote Registry should be disabled if unused.</li>
+
+
+
+<li>Common Windows Services You Might Consider Disabling</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Harden Remote Desktop Protocol (RDP)
+<ul class="wp-block-list">
+<li>Use Network Level Authentication (NLA).</li>
+
+
+
+<li>Limit access to trusted IP addresses.</li>
+
+
+
+<li>Disable RDP if not needed.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Configure Audit Policies
+<ul class="wp-block-list">
+<li>Enable logging to monitor suspicious activities.</li>
+
+
+
+<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f4e2.png" alt="📢" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Tip: Use gpedit.msc &gt; Local Policies &gt; Audit Policy.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Restrict PowerShell Execution Policies
+<ul class="wp-block-list">
+<li>Limit what scripts can run.</li>
+
+
+
+<li><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f4e2.png" alt="📢" class="wp-smiley" style="height: 1em; max-height: 1em;" /> Tip: Run Set-ExecutionPolicy AllSigned in PowerShell.</li>
+</ul>
+</li>
+
+
+
+<li style="font-size:16px">Apply AppLocker or Windows Defender Application Control
+<ul class="wp-block-list">
+<li>Control which apps and scripts are allowed to run.</li>
+</ul>
+</li>
+</ol>
+
+
+
+<h2 class="wp-block-heading has-medium-font-size">Browser Hardening Tips</h2>
+
+
+
+<p style="font-size:16px">Since browsers are common attack targets:</p>
+
+
+
+<ul class="wp-block-list">
+<li style="font-size:16px">Use privacy and security-focused extensions like uBlock Origin and HTTPS Everywhere.</li>
+
+
+
+<li style="font-size:16px">Regularly clear browsing data.</li>
+
+
+
+<li style="font-size:16px">Enable SmartScreen Filter in Microsoft Edge.</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading has-medium-font-size">Bonus Tips for Maximum Security</h2>
+
+
+
+<ul class="wp-block-list">
+<li style="font-size:16px">Create System Restore Points before major updates.</li>
+
+
+
+<li style="font-size:16px">Backup your important data — both offline and on the cloud.</li>
+
+
+
+<li style="font-size:16px">Educate yourself and others about phishing attacks.</li>
+
+
+
+<li style="font-size:16px">Use Two-Factor Authentication (2FA) wherever possible.</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading has-medium-font-size">Final Thoughts</h2>
+
+
+
+<p style="font-size:16px">Security is not a one-time task — it’s an ongoing process.<br>Hardening your Windows PC significantly raises the bar for attackers, but staying alert, informed, and cautious is equally important.<br>By following the steps above, you&#8217;re taking control of your digital safety and ensuring your computer remains secure, private, and efficient.<br>Stay safe and stay hardened! <img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f512.png" alt="🔒" class="wp-smiley" style="height: 1em; max-height: 1em;" /><img src="https://s.w.org/images/core/emoji/17.0.2/72x72/1f4bb.png" alt="💻" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+
+
+
+<p></p>
+<p>The post <a href="/blogs/win/windows-hardening/">Windows OS Hardening</a> appeared first on <a href="/">Bits Journey</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blogs/win/windows-hardening/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Linux File System</title>
+		<link>/blogs/linux/linux-file-system/</link>
+					<comments>/blogs/linux/linux-file-system/#respond</comments>
+		
+		<dc:creator><![CDATA[user]]></dc:creator>
+		<pubDate>Tue, 18 Feb 2025 10:10:07 +0000</pubDate>
+				<category><![CDATA[Linux]]></category>
+		<category><![CDATA[File system]]></category>
+		<category><![CDATA[linux file system]]></category>
+		<category><![CDATA[linux user]]></category>
+		<guid isPermaLink="false">/?p=1738</guid>
+
+					<description><![CDATA[<p>What Is the Linux File System? In Linux, the file system refers to the method and data structure that the operating system uses to manage files on a disk. Unlike Windows, Linux uses a single directory tree that starts at the root (/). This design makes it easier to organize files logically and maintain a [&#8230;]</p>
+<p>The post <a href="/blogs/linux/linux-file-system/">Linux File System</a> appeared first on <a href="/">Bits Journey</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h2 class="wp-block-heading has-large-font-size"><strong>What Is the Linux File System?</strong></h2>
+
+
+
+<p style="font-size:16px">In Linux, the file system refers to the method and data structure that the operating system uses to manage files on a disk. Unlike Windows, Linux uses a single directory tree that starts at the root (/). This design makes it easier to organize files logically and maintain a consistent structure across distributions.</p>
+
+
+
+<h3 class="wp-block-heading has-medium-font-size"><strong>Introduction</strong></h3>
+
+
+
+<p style="font-size:16px">The Linux file system is much more than just a way to store files—it’s a well-organized hierarchy that forms the backbone of every Linux system. Whether you’re a beginner trying to navigate your first Linux installation or a seasoned professional managing servers, understanding the Linux file system is essential. In this post, we’ll break down the key components, explain the file hierarchy, discuss file system types, and explore advanced topics like permissions and mounting.</p>
+
+
+
+<h3 class="wp-block-heading has-medium-font-size"><strong>The Linux File System Hierarchy</strong></h3>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="550" height="336" src="/wp-content/uploads/2025/02/f4070678bc8c7cfbe675ccc347b02a97.jpg" alt="" class="wp-image-2647" srcset="/wp-content/uploads/2025/02/f4070678bc8c7cfbe675ccc347b02a97.jpg 550w, /wp-content/uploads/2025/02/f4070678bc8c7cfbe675ccc347b02a97-300x183.jpg 300w" sizes="(max-width: 550px) 100vw, 550px" /></figure>
+
+
+
+<h4 class="wp-block-heading has-medium-font-size"><strong>The Root Directory </strong><strong>/</strong></h4>
+
+
+
+<p style="font-size:16px">At the very top of the Linux file system is the root directory, denoted by a single slash (/). Every file and directory in Linux is located under this root directory. All system files, user files, and application files branch out from here.</p>
+
+
+
+<h4 class="wp-block-heading has-medium-font-size"><strong>Key Directories and Their Roles</strong></h4>
+
+
+
+<p style="font-size:16px">Here’s a breakdown of some of the most important directories in the Linux file system hierarchy:</p>
+
+
+
+<ul class="wp-block-list">
+<li style="font-size:16px"><strong>/bin<br>&nbsp;</strong>Contains essential binary executables (commands) required for both the system and user-level operations.<br>&nbsp;<em>Example:</em>&nbsp;/bin/ls, /bin/cp</li>
+
+
+
+<li style="font-size:16px"><strong>/boot</strong><br>Contains the files needed to start the system, including the kernel and boot loader.<br>Caution: Modifying files here can prevent your system from booting.<br> <em>Example</em>: vmlinuz, initrd.img, GRUB files.</li>
+
+
+
+<li style="font-size:16px"><strong>/sbin<br>&nbsp;</strong>Houses system binaries used primarily by the system administrator. These commands are crucial for system maintenance and recovery.<br>&nbsp;<em>Example:</em>&nbsp;/sbin/reboot, /sbin/ifconfig</li>
+
+
+
+<li style="font-size:16px"><strong>/etc<br>&nbsp;</strong>Contains system-wide configuration files and scripts. This is where you configure system behavior and installed applications.<br>&nbsp;<em>Example:</em>&nbsp;/etc/passwd, /etc/hosts</li>
+
+
+
+<li style="font-size:16px"><strong>/usr<br>&nbsp;</strong>A secondary hierarchy that holds application programs and files meant for users. It’s often subdivided into /usr/bin for user executables and /usr/lib for libraries.<br>&nbsp;<em>Example:</em>&nbsp;/usr/bin/python, /usr/lib</li>
+
+
+
+<li style="font-size:16px"><strong>/home<br>&nbsp;</strong>Stores personal directories for users. Each user has a dedicated subdirectory here where personal files and settings are kept.<br>&nbsp;<em>Example:</em>&nbsp;/home/alice, /home/bob</li>
+
+
+
+<li style="font-size:16px"><strong>/var<br>&nbsp;</strong>Contains variable data files such as logs, databases, caches, and spool files.<br>&nbsp;<em>Example:</em>&nbsp;/var/log, /var/mail</li>
+
+
+
+<li style="font-size:16px"><strong>/tmp<br>&nbsp;</strong>A temporary directory for files created by applications and users during runtime. These files are usually cleared on reboot.</li>
+
+
+
+<li style="font-size:16px"><strong>/dev<br> </strong>Holds device files that represent hardware components and peripherals. Used by the kernel and system processes to interact with hardware.<br> <em>Example:</em> /dev/sda1 (a disk partition)</li>
+
+
+
+<li style="font-size:16px"><strong>/media<br> </strong>Temporary mount point for external storage like USBs and CDs. When you plug in a USB, it may appear at /media/username/drive-label.</li>
+
+
+
+<li style="font-size:16px"><strong>/mnt </strong><br>Generic mount point used by admins for mounting storage manually. Useful during system recovery or mounting ISO files.</li>
+
+
+
+<li style="font-size:16px"><strong>/opt</strong><br>Stores third-party or add-on applications that are not part of the default system. Manually installed software like /opt/google, /opt/zoom.</li>
+
+
+
+<li style="font-size:16px"><strong>/sys</strong><br>Interfaces with the kernel; shows device and hardware information. Used by udev and systemd; managed automatically.</li>
+
+
+
+<li style="font-size:16px"><strong>/usr</strong><br>Holds the bulk of user-space programs and data.
+<ul class="wp-block-list">
+<li style="font-size:16px">/usr/bin    : User commands</li>
+
+
+
+<li style="font-size:16px">/usr/sbin  : System commands for root</li>
+
+
+
+<li style="font-size:16px">/usr/lib     : Libraries</li>
+
+
+
+<li style="font-size:16px">/usr/local : Locally compiled or manually installed software</li>
+</ul>
+</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading has-medium-font-size">Tips for Navigating the File System</h2>
+
+
+
+<ul class="wp-block-list">
+<li style="font-size:16px">Use <code><strong>ls</strong></code> to list contents</li>
+
+
+
+<li style="font-size:16px">Use <code><strong>cd</strong></code> to change directories</li>
+
+
+
+<li style="font-size:16px">Use <code><strong>pwd</strong></code> to know your current location</li>
+
+
+
+<li style="font-size:16px">Use <code><strong>tree</strong></code> (install it with <code>sudo apt install tree</code>) to visualize the hierarchy</li>
+</ul>
+
+
+
+<p style="font-size:16px">Understanding the Linux file system is essential if you want to become proficient with Linux — especially for sysadmins, developers, and cybersecurity folks. Take time to explore each directory, and don&#8217;t be afraid to experiment (safely).</p>
+
+
+
+<p style="font-size:16px">The Linux philosophy is all about clarity and control. Once you grasp the structure, you&#8217;ll feel much more at home in the terminal.</p>
+<p>The post <a href="/blogs/linux/linux-file-system/">Linux File System</a> appeared first on <a href="/">Bits Journey</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blogs/linux/linux-file-system/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
